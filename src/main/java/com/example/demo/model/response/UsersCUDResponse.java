@@ -1,8 +1,7 @@
-package com.example.demo.model.request;
+package com.example.demo.model.response;
 
 import java.io.Serializable;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Null;
+import java.math.BigDecimal;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -14,8 +13,6 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class UsersGetOneRequest implements Serializable {
-	@NotBlank
-	@Null
-	private String id;
+public class UsersCUDResponse implements Serializable {
+	private String message;
 }

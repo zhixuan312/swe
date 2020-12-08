@@ -33,8 +33,7 @@ public class UsersUploadController {
 					@ApiResponse(code = 500, message = "Internal system error")
 			})
 	@PostMapping("/")
-	public UsersUploadResponse uploadUserData(@RequestBody @Valid UsersUploadRequest request) {
-		System.out.println(request);
+	public UsersUploadResponse uploadUser(@RequestBody @Valid UsersUploadRequest request) {
 		return usersUploadService.execute(request);
 	}
 }

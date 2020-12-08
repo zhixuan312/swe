@@ -1,5 +1,6 @@
 package com.example.demo.model.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -16,7 +17,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "users")
-public class UsersEntity {
+public class UsersEntity implements Serializable {
 	@Id
 	@Column(name = "id", nullable = false)
 	private String id;
