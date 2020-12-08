@@ -72,7 +72,7 @@ public abstract class UsersMapper {
 			}
 
 			if (Objects.nonNull(usersUpdateRequest.getSalary())) {
-				target.salary(usersUpdateRequest.getSalary().toString());
+				target.salary(usersUpdateRequest.getSalary());
 			} else {
 				target.salary(source.getSalary());
 			}

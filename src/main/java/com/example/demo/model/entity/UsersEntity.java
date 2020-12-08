@@ -1,6 +1,7 @@
 package com.example.demo.model.entity;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -29,7 +30,7 @@ public class UsersEntity implements Serializable {
 	private String name;
 
 	@Column(name = "salary", nullable = false)
-	private String salary;
+	private BigDecimal salary;
 
 	@Column(name = "start_date", nullable = false)
 	private Date startDate;

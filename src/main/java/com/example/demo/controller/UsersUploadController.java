@@ -1,23 +1,24 @@
 package com.example.demo.controller;
 
-import com.example.demo.model.request.UsersUploadRequest;
-import com.example.demo.model.response.UsersUploadResponse;
+import com.example.demo.model.response.UsersCUDResponse;
 import com.example.demo.service.UsersUploadService;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
-import javax.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 @RestController
 @RequestMapping("/users/upload")
 @Slf4j
 public class UsersUploadController {
 
+	@Autowired
 	private final UsersUploadService usersUploadService;
 
 	public UsersUploadController(UsersUploadService usersUploadService) {
@@ -29,11 +30,11 @@ public class UsersUploadController {
 			value = {
 					@ApiResponse(code = 200, message = "Success"),
 					@ApiResponse(code = 400, message = "Invalid input"),
-					@ApiResponse(code = 404, message = "Not found"),
-					@ApiResponse(code = 500, message = "Internal system error")
+					@ApiResponse(code = 401, message = "Not found")
 			})
-	@PostMapping("/")
-	public UsersUploadResponse uploadUser(@RequestBody @Valid UsersUploadRequest request) {
-		return usersUploadService.execute(request);
+	@PostMapping("")
+	public UsersCUDResponse uploadUser(@RequestParam("file") MultipartFile file) {
+
+		return usersUploadService.execute(file);
 	}
 }
