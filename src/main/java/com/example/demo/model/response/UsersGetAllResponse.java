@@ -14,5 +14,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class UsersGetAllResponse implements Serializable {
+
 	private List<UsersGetOneResponse> users;
 }

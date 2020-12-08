@@ -19,6 +19,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Table(name = "users")
 public class UsersEntity implements Serializable {
+
 	@Id
 	@Column(name = "id", nullable = false)
 	private String id;

@@ -7,9 +7,6 @@ import com.example.demo.model.request.UsersUpdateRequest;
 import com.example.demo.model.response.UsersGetOneResponse;
 import com.example.demo.model.response.UsersGetOneResponse.UsersGetOneResponseBuilder;
 import java.text.SimpleDateFormat;
-import java.util.Arrays;
-import java.util.Date;
-import java.util.List;
 import java.util.Objects;
 import org.mapstruct.AfterMapping;
 import org.mapstruct.BeanMapping;
@@ -44,7 +41,8 @@ public abstract class UsersMapper {
 	@Mapping(target = "salary", ignore = true)
 	@Mapping(target = "startDate", ignore = true)
 	@BeanMapping(qualifiedByName = "updateMapping")
-	public abstract UsersEntity fromUsersUpdateRequestToUsersEntity(UsersUpdateRequest usersUpdateRequest, UsersEntity usersEntity);
+	public abstract UsersEntity fromUsersUpdateRequestToUsersEntity(UsersUpdateRequest usersUpdateRequest,
+			UsersEntity usersEntity);
 
 	@Named("responseFormatting")
 	@AfterMapping
@@ -57,7 +55,8 @@ public abstract class UsersMapper {
 
 	@Named("updateMapping")
 	@AfterMapping
-	void updateMapping(@MappingTarget UsersEntityBuilder target, UsersUpdateRequest usersUpdateRequest, UsersEntity source) {
+	void updateMapping(@MappingTarget UsersEntityBuilder target, UsersUpdateRequest usersUpdateRequest,
+			UsersEntity source) {
 		if (Objects.nonNull(source)) {
 			if (Objects.nonNull(usersUpdateRequest.getLogin())) {
 				target.login(usersUpdateRequest.getLogin());

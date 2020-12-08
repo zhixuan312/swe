@@ -16,6 +16,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class UsersCreateRequest implements Serializable {
+
 	@NotBlank
 	@Null
 	private String id;

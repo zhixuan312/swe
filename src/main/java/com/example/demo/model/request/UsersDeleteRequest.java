@@ -15,6 +15,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class UsersDeleteRequest implements Serializable {
+
 	@NotBlank
 	@Null
 	private String id;

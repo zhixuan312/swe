@@ -15,6 +15,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class UsersGetAllRequest implements Serializable {
+
 	private BigDecimal minSalary;
 	private BigDecimal maxSalary;
 	private int offset;

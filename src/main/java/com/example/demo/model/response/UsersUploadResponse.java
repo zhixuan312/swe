@@ -13,5 +13,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class UsersUploadResponse implements Serializable {
- private String message;
+
+	private String message;
 }

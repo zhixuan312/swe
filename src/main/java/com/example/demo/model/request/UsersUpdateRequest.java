@@ -16,6 +16,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class UsersUpdateRequest implements Serializable {
+
 	private String name;
 	private String login;
 	private BigDecimal salary;
